@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+ENV["DEBUG"] = "1"
+require "bundler/setup"
+require "dc_address_lookup"
+
+client = DcAddressLookup::Client.new
+
+require "pry"
+Pry.start
