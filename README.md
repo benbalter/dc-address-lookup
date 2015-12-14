@@ -1,6 +1,6 @@
 # DC Address Lookup
 
-*A Ruby gem to look up Washington, D.C., addresses in the master address registry, an official city database*
+*A Ruby gem to look up Washington, D.C. addresses in the master address registry, an official city database*
 
 ## Installation
 
