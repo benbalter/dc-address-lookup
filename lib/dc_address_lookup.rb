@@ -8,8 +8,6 @@ require "dc_address_lookup/client"
 require "dc_address_lookup/response"
 require "dc_address_lookup/location"
 
-RestClient.enable Rack::Cache
-
 module DcAddressLookup
   ENDPOINT = "http://citizenatlas.dc.gov/newwebservices/locationverifier.asmx/findLocation"
 
