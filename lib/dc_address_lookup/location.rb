@@ -15,6 +15,10 @@ module DcAddressLookup
       location
     end
 
+    def valid?
+      !(data.empty?)
+    end
+
     def method_missing(method_sym, *arguments, &block)
       if has_property?(method_sym)
        data[method_sym.to_s]
