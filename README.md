@@ -2,6 +2,8 @@
 
 *A Ruby gem to look up Washington, D.C. addresses in the master address registry, an official city database*
 
+[![Build Status](https://travis-ci.org/benbalter/dc-address-lookup.svg)](https://travis-ci.org/benbalter/dc-address-lookup)
+
 ## Installation
 
 Add the following to your project's Gemfile:
