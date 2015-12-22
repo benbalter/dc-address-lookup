@@ -29,7 +29,7 @@ describe DcAddressLookup::Location do
   }
 
   it "parses all the keys" do
-    expect(subject.data.count).to eql(43)
+    expect(subject.data.count).to eql(46)
   end
 
   EXPECTATIONS.each do |key, value|

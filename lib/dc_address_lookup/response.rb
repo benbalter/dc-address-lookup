@@ -13,16 +13,12 @@ module DcAddressLookup
 
     private
 
-    def document
-      doc ||= begin
-        doc = Nokogiri::XML(body) { |config| config.strict.nonet }
-        doc.remove_namespaces!
-        doc
-      end
+    def parsed
+      @parsed ||= JSON.parse(body)
     end
 
     def table
-      document.xpath("ReturnObject//returnDataset//diffgram//NewDataSet//Table1")
+      parsed["returnDataset"]["Table1"].first
     end
   end
 end

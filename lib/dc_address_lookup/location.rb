@@ -1,14 +1,19 @@
 module DcAddressLookup
   class Location
-    def self.from_table(xml)
+    def self.from_table(table)
       location = self.new
 
-      xml.children.each do |node|
-        next if node.node_name == "text"
-        key = node.name.downcase
-        value = node.text.gsub(/\A#{key.split("_").first}\b/i, "").squeeze("\s").strip
-        value = value.to_i if value.to_i.to_s == value
-        value = value.to_f if value.to_f.to_s == value
+      table.each do |key,value|
+        key = key.downcase
+
+        if value.class == String
+          value = value.gsub(/\A#{key.split("_").first}\b/i, "").squeeze("\s").strip
+          value = value.to_i if value =~ /\A[1-9][0-9]*\z/
+          value = value.to_f if value =~ /\A[0-9]+\.[0-9]+\z/
+        elsif value.class == Float
+          value = value.to_i if value.to_s =~ /\A[0-9]+\.0\z/
+        end
+
         location.data[key] = value
       end
 

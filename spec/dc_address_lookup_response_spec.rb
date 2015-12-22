@@ -7,14 +7,15 @@ describe DcAddressLookup::Response do
     expect(subject.body).to eql(fixture)
   end
 
-  it "parses the doc" do
-    expect(subject.send(:document).class).to eql(Nokogiri::XML::Document)
+  it "parses the json" do
+    expect(subject.send(:parsed).class).to eql(Hash)
   end
 
   it "traverses down to the table" do
     table = subject.send(:table)
-    expect(table.children.count).to eql(87)
-    expect(table.children[1].text).to eql("293211")
+    expect(table.keys.count).to eql(46)
+    expect(table.keys.first).to eql("ADDRESS_ID")
+    expect(table.values.first).to eql(293211.0)
   end
 
   it "return the location" do

@@ -7,7 +7,8 @@ describe DcAddressLookup do
   end
 
   it "looks up an address" do
-    stub = stub_request(:get, "#{DcAddressLookup::ENDPOINT}?str=1600%20Pennsylvania%20Ave%20NW").
+    query = "#{DcAddressLookup::ENDPOINT}?f=json&str=1600%20Pennsylvania%20Ave%20NW"
+    stub = stub_request(:get, query).
       to_return(:status => 200, :body => fixture)
 
     location = DcAddressLookup.lookup(TEST_ADDRESS)
