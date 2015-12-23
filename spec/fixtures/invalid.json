@@ -1,0 +1,44 @@
+{
+  "returnCodes": null,
+  "details": "<STRONG>Normalized:</STRONG> 123 MAIN ST NW</br><STRONG>Parsed:</STRONG></br><EM>Address Number: </EM>123</br><EM>Address Number Suffix: </EM></br><EM>Street Name: </EM>MAIN</br><EM>Street Type: </EM>STREET</br><EM>Quad: </EM>NW</br><STRONG>Possible Standard Street Names: </STRONG></br>MAIN</br>",
+  "returnDataset": null,
+  "returnBlkAddrDataset": null,
+  "returnCDDataSet": {
+    "Address Return Codes": [
+      {
+        "Component": "Street Type",
+        "Parsed & Normalized": "STREET",
+        "Assessment": "Valid"
+      },
+      {
+        "Component": "Quad",
+        "Parsed & Normalized": "NW",
+        "Assessment": "Valid"
+      },
+      {
+        "Component": "Street Name",
+        "Parsed & Normalized": "MAIN",
+        "Assessment": "Valid"
+      },
+      {
+        "Component": "Address Number/Street Name",
+        "Parsed & Normalized": "123 MAIN",
+        "Assessment": "Not Valid"
+      },
+      {
+        "Component": "Street Name/Street Type",
+        "Parsed & Normalized": "MAIN STREET",
+        "Assessment": "Not Valid"
+      },
+      {
+        "Component": "Street Name/Street Type/Quad",
+        "Parsed & Normalized": "MAIN STREET NW",
+        "Assessment": "Not Valid"
+      }
+    ]
+  },
+  "UNIT": null,
+  "UNITNUMBER": null,
+  "sourceOperation": "DC Address",
+  "processTime": "0 seconds and 46 milliseconds"
+}

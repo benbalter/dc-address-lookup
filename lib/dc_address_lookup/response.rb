@@ -18,7 +18,7 @@ module DcAddressLookup
     end
 
     def table
-      parsed["returnDataset"]["Table1"].first
+      parsed["returnDataset"]["Table1"].first if parsed["returnDataset"]
     end
   end
 end

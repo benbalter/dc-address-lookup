@@ -2,6 +2,7 @@ module DcAddressLookup
   class Location
     def self.from_table(table)
       location = self.new
+      return location unless table
 
       table.each do |key,value|
         key = key.downcase
